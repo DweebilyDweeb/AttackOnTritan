@@ -63,7 +63,6 @@ public class Health : MonoBehaviour {
 		if (_healthLost <= 0) {
 			return;
 		}
-
 		int temp = currentHealth;
 		currentHealth = Mathf.Max(0, currentHealth - _healthLost);
 		if (temp != currentHealth) { //There was a change in health.
@@ -89,6 +88,14 @@ public class Health : MonoBehaviour {
 
 	public int GetPreviousMaxHealth() {
 		return previousMaxHealth;
+	}
+
+	public bool IsAlive() {
+		return currentHealth > 0;
+	}
+
+	public bool IsDead() {
+		return !IsAlive();
 	}
 
 }
