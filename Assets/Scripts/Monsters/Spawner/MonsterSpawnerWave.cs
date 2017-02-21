@@ -21,19 +21,17 @@ public class MonsterSpawnerWave : MonoBehaviour {
 		spawnCountdownTimer = 0.0f;
 		triggerCountdownTimer = triggerTime;
 
-		if (gameObject.transform.parent != null) {
-			GameObject parentGameObject = gameObject.transform.parent.gameObject;
-			while (parentGameObject != null) {
-				monsterSpawner = parentGameObject.GetComponent<MonsterSpawner>(); //Get the spawner if there is, null if there isn't.
-				if (monsterSpawner != null) {
-					break;
-				}
-				parentGameObject = gameObject.transform.parent.gameObject;
+		Transform parentTransform = gameObject.transform.parent; //Get our parent's transform.
+		while (parentTransform != null) {
+			monsterSpawner = parentTransform.gameObject.GetComponent<MonsterSpawner>(); //Get the spawner if there is, null if there isn't.
+			if (monsterSpawner != null) {
+				break;
 			}
+			parentTransform = parentTransform.parent;
 		}
 
 		if (monsterSpawner == null) {
-			print("MonsterSpawnerWave has no Monster Spawner.");
+			print(gameObject.name + " has no Monster Spawner.");
 		}
 	}
 

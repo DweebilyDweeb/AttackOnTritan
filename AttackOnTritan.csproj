@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -79,8 +73,10 @@
     <Compile Include="Assets\Scripts\MainMenu\Menu.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Pause.cs" />
     <Compile Include="Assets\Scripts\Monsters\Common\AIAttack.cs" />
+    <Compile Include="Assets\Scripts\Monsters\Common\AIAttackCrystal.cs" />
     <Compile Include="Assets\Scripts\Monsters\Common\AIBehaviour.cs" />
     <Compile Include="Assets\Scripts\Monsters\Common\AIDeath.cs" />
+    <Compile Include="Assets\Scripts\Monsters\Common\AIFollowPath.cs" />
     <Compile Include="Assets\Scripts\Monsters\Common\AIMovement.cs" />
     <Compile Include="Assets\Scripts\Monsters\Goblin\GoblinAnimation.cs" />
     <Compile Include="Assets\Scripts\Monsters\Spawner\MonsterSpawner.cs" />

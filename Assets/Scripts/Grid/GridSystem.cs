@@ -19,7 +19,7 @@ public class GridSystem : MonoBehaviour
 			gridID = _gridID;
 			gCost = _gCost;
 			hCost = _hCost;
-			SearchNode parent = null;
+			parent = null;
 		}
 
 		public int GetFCost()
@@ -42,10 +42,9 @@ public class GridSystem : MonoBehaviour
 	[SerializeField]
 	private GameObject[] grids; // Dynamic array of grids[numRows * numCols]
 
-	//[HideInInspector]
 	public GameObject tritanCrystalPrefab;
-	//[HideInInspector]
-	public List<GridID> tritanCrystalGridIDs;
+	[SerializeField]
+	private List<GridID> tritanCrystalGridIDs;
 
 	void Awake()
 	{		
@@ -84,6 +83,7 @@ public class GridSystem : MonoBehaviour
 				GridID id = ComputeID(row, column);
 				grids [id] = GameObject.Instantiate (gridPrefab.gameObject);
 				grids [id].GetComponent<Transform> ().SetParent (gameObject.GetComponent<Transform>());
+				grids[id].GetComponent<Grid>().FindParentGridSystem();
 				Vector3 gridScale = gridPrefab.gameObject.GetComponent<Transform> ().localScale;
 				grids [id].GetComponent<Transform> ().position = new Vector3 (column * gridScale.x + originPosition.x, originPosition.y, row * gridScale.z + originPosition.z);
 				grids [id].GetComponent<Grid>().SetID (id);
@@ -130,11 +130,12 @@ public class GridSystem : MonoBehaviour
 				if (field.Length > 0 && field[0] == '1')
 				{
 					GridID id = ComputeID(row, column);
-					grids [id] = GameObject.Instantiate (gridPrefab.gameObject);
-					grids [id].GetComponent<Transform> ().SetParent (gameObject.GetComponent<Transform>());
+					grids[id] = GameObject.Instantiate (gridPrefab.gameObject);
+					grids[id].GetComponent<Transform> ().SetParent (gameObject.GetComponent<Transform>());
+					grids[id].GetComponent<Grid>().FindParentGridSystem();
 					Vector3 gridScale = gridPrefab.gameObject.GetComponent<Transform> ().localScale;
-					grids [id].GetComponent<Transform> ().position = new Vector3 (column * gridScale.x + originPosition.x, originPosition.y, row * gridScale.z + originPosition.z);
-					grids [id].GetComponent<Grid>().SetID (id);
+					grids[id].GetComponent<Transform> ().position = new Vector3 (column * gridScale.x + originPosition.x, originPosition.y, row * gridScale.z + originPosition.z);
+					grids[id].GetComponent<Grid>().SetID (id);
 				}
 				++column;
             }
@@ -407,6 +408,10 @@ public class GridSystem : MonoBehaviour
 
 	public int GetNumColumns() {
 		return numColumns;
+	}
+
+	public List<GridID> GetTritanCrystalGridIDs() {
+		return tritanCrystalGridIDs;
 	}
 
 }

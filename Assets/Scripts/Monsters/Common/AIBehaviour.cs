@@ -20,7 +20,7 @@ public class AIBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		states = new MonoBehaviour[(uint)AI_STATE.NUM_AI_STATE];
-		states[(uint)AI_STATE.MOVE] = gameObject.GetComponent<AIMovement>();
+		states[(uint)AI_STATE.MOVE] = gameObject.GetComponent<AIFollowPath>();
 		states[(uint)AI_STATE.ATTACK] = gameObject.GetComponent<AIAttack>();
 		states[(uint)AI_STATE.DEAD] = gameObject.GetComponent<AIDeath>();
 	}
@@ -41,7 +41,7 @@ public class AIBehaviour : MonoBehaviour {
 		switch (currentState) {
 			case AI_STATE.MOVE:
 				//If we reached the end, then attack.
-				AIMovement moveState = (AIMovement)states[(uint)currentState];
+				AIFollowPath moveState = (AIFollowPath)states[(uint)currentState];
 				if (moveState.IsDone()) {
 					print("Movement Done.");
 					currentState = AI_STATE.ATTACK;
