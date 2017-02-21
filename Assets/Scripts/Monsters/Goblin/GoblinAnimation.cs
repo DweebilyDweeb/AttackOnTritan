@@ -7,8 +7,7 @@ public class GoblinAnimation : MonoBehaviour {
 	int velocityRatioHash;
 	int attackHash;
 	int healthHash;
-	int deadHash;
-	bool dead;
+	bool isAlive;
 
 	// Use this for initialization
 	void Start () {
@@ -16,32 +15,36 @@ public class GoblinAnimation : MonoBehaviour {
 		velocityRatioHash = Animator.StringToHash("Velocity Ratio");
 		attackHash = Animator.StringToHash("Attack");
 		healthHash = Animator.StringToHash("Health");
-		deadHash = Animator.StringToHash("Dead");
-		dead = false;
+		isAlive = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Health
+		int currentHealth = gameObject.GetComponent<Health>().GetCurrentHealth();
+		animator.SetInteger(healthHash, currentHealth);
+		if (!gameObject.GetComponent<Health>().IsAlive() && isAlive) {
+			animator.SetTrigger("Die");
+		}
+		isAlive = gameObject.GetComponent<Health>().IsAlive();
+		if (!isAlive) {
+			return;
+		}
+
 		//Velocity Ratio
 		Vector3 velocity = gameObject.GetComponent<Rigidbody>().velocity;
 		velocity.y = 0.0f;
 		float velocityRatio = velocity.magnitude / gameObject.GetComponent<AIMovement>().GetMaxMovementSpeed();
 		animator.SetFloat(velocityRatioHash, velocityRatio);
 
-		//Health
-		int currentHealth = gameObject.GetComponent<Health>().GetCurrentHealth();
-		animator.SetInteger(healthHash, currentHealth);
-
-		if (currentHealth > 0) {
-			dead = false;
-		} else if (currentHealth <= 0 && !dead) {
-			animator.SetTrigger(deadHash);
-			dead = true;
-		}
-
 		//Attack
-		if (gameObject.GetComponent<AIAttack>().IsAttacking()) {
+		if (gameObject.GetComponent<AIAttackCrystal>().IsAttacking()) {
 			animator.SetTrigger(attackHash);
 		}
 	}
+
+	public void Reset() {
+		animator.Play("Idle");
+	}
+
 }

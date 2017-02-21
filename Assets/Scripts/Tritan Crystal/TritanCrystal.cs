@@ -37,9 +37,13 @@ public class TritanCrystal : MonoBehaviour {
 	void Update () {
 		//Check if we diededed.
 		if (gameObject.GetComponent<Health>().GetCurrentHealth() <= 0) {			
-			GameObject.Instantiate(explosionPrefab); //イクスポロージョン！
+			GameObject explosion = GameObject.Instantiate(explosionPrefab); //イクスポロージョン！
+			explosion.transform.position = gameObject.transform.position;
 			//GameObject.Destroy(gameObject);
+			lightning.SetActive(false);
+			floorElectricity.SetActive(false);
 			gameObject.SetActive(false);
+			return;
 		}
 
 		//How long till we're ready to dish out some pain?
