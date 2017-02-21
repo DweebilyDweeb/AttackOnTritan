@@ -9,6 +9,7 @@ public class AIFollowPath : MonoBehaviour {
     public GridSystem gridSystem; //Grid System
 
 	public List<GridID> path; //Path
+	[SerializeField]
 	private int pathIndex; //Where are we along the path.    
 	private float reachedDistance; //How close must we be to the grid to have considered reaching it.
 
@@ -108,6 +109,10 @@ public class AIFollowPath : MonoBehaviour {
 
 	public bool IsDone() {
 		return (path == null) || (pathIndex >= path.Count);
+	}
+
+	public void Reset() {
+		pathIndex = 0;
 	}
 
 }

@@ -33,7 +33,7 @@ public class AIAttackCrystal : AIAttack {
 
 		if (attackCountdownTimer <= 0.0f) {
 			if (Attack()) {
-				print("Attacked Crystal");
+				//print("Attacked Crystal");
 				attacking = true;
 				attackCountdownTimer = 1.0f / attackRate;
 			}
@@ -71,6 +71,13 @@ public class AIAttackCrystal : AIAttack {
 			result = true;
 		}
 		return result;
+	}
+
+	public bool IsDone() {
+		if (tritanCrystal == null || tritanCrystal.GetComponent<Health>() == null || tritanCrystal.GetComponent<Health>().IsDead()) {
+			return true;
+		}
+		return false;
 	}
 
 }
