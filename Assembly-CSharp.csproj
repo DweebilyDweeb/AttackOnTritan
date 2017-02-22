@@ -6,7 +6,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
+<<<<<<< HEAD
     <ProjectGuid>{25C07682-09DC-58EC-CC6B-883391C7E79E}</ProjectGuid>
+=======
+    <ProjectGuid>{BEB06057-295F-A2D7-1C12-2993039C7468}</ProjectGuid>
+>>>>>>> caf45f554fe8b57430f0a2bfb562c235264a63bb
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -50,15 +54,20 @@
      <Compile Include="Assets\Scripts\Grid\GridSystem.cs" />
      <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
      <Compile Include="Assets\Scripts\MainMenu\DontDestroy.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\DontDestroyMain.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MainMenuRotate.cs" />
      <Compile Include="Assets\Scripts\MainMenu\Menu.cs" />
      <Compile Include="Assets\Scripts\MainMenu\Pause.cs" />
+     <Compile Include="Assets\Scripts\Monsters\Common\AIAnimation.cs" />
      <Compile Include="Assets\Scripts\Monsters\Common\AIAttack.cs" />
+     <Compile Include="Assets\Scripts\Monsters\Common\AIAttackCrystal.cs" />
      <Compile Include="Assets\Scripts\Monsters\Common\AIBehaviour.cs" />
      <Compile Include="Assets\Scripts\Monsters\Common\AIDeath.cs" />
+     <Compile Include="Assets\Scripts\Monsters\Common\AIFollowPath.cs" />
      <Compile Include="Assets\Scripts\Monsters\Common\AIMovement.cs" />
-     <Compile Include="Assets\Scripts\Monsters\Goblin\GoblinAnimation.cs" />
+     <Compile Include="Assets\Scripts\Monsters\Common\MonsterType.cs" />
      <Compile Include="Assets\Scripts\Monsters\Spawner\MonsterSpawner.cs" />
+     <Compile Include="Assets\Scripts\Monsters\Spawner\MonsterSpawnerStage.cs" />
      <Compile Include="Assets\Scripts\Monsters\Spawner\MonsterSpawnerWave.cs" />
      <Compile Include="Assets\Scripts\Others\BuildingPhaseSystemScript.cs" />
      <Compile Include="Assets\Scripts\Others\CameraRenderScript.cs" />

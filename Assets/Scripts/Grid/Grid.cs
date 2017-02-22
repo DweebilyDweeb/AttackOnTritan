@@ -15,15 +15,33 @@ public class Grid : MonoBehaviour {
 	public GameObject wall; // The wall (if any) on the grid. Public variable so that it can be changed easily
 	public GameObject tritanCrystal;
 
-	void Awake() {
+	[SerializeField]
+	private GridSystem gridSystem;
+
+	public void Awake() {		
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start () {		
 	}
 
 	// Update is called once per frame
 	void Update () {
+	}
+
+	public void FindParentGridSystem() {
+		Transform parentTransform = gameObject.transform.parent; //Get our parent's transform.
+		while (parentTransform != null) {
+			gridSystem = parentTransform.gameObject.GetComponent<GridSystem>(); //Get the spawner if there is, null if there isn't.
+			if (gridSystem != null) {
+				break;
+			}
+			parentTransform = parentTransform.parent;
+		}
+
+		if (gridSystem == null) {
+			print(gameObject.name + " has no Grid System.");
+		}
 	}
 
 	//Setters and getters for Tile ID
@@ -48,6 +66,10 @@ public class Grid : MonoBehaviour {
 		neighbourIDs [1] = _nextRow;
 		neighbourIDs [2] = _previousColumn;
 		neighbourIDs [3] = _nextColumn;
+	}
+
+	public GridSystem GetGridSystem() {
+		return gridSystem;
 	}
 
 }

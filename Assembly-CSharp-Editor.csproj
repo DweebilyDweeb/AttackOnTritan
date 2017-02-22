@@ -6,7 +6,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
+<<<<<<< HEAD
     <ProjectGuid>{9B4A2FDE-CAAD-C456-ECCD-1C201275DB24}</ProjectGuid>
+=======
+    <ProjectGuid>{E1D0C2DE-4ACC-F509-AE49-FF1A23E7D553}</ProjectGuid>
+>>>>>>> caf45f554fe8b57430f0a2bfb562c235264a63bb
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -45,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\GameSettingsWindow.cs" />
      <Compile Include="Assets\Editor\GridMenu.cs" />
      <Compile Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Editor\ImageEffects\AntialiasingEditor.cs" />
      <Compile Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
@@ -174,7 +179,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
+<<<<<<< HEAD
       <Project>{25C07682-09DC-58EC-CC6B-883391C7E79E}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+=======
+      <Project>{BEB06057-295F-A2D7-1C12-2993039C7468}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{A7DA2B51-5425-8AAA-73F9-2BBAADAEE0B5}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+>>>>>>> caf45f554fe8b57430f0a2bfb562c235264a63bb
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
