@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8208E374-5485-FDEF-0165-F86AFD3EA04F}</ProjectGuid>
+    <ProjectGuid>{25C07682-09DC-58EC-CC6B-883391C7E79E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -63,8 +63,8 @@
      <Compile Include="Assets\Scripts\Others\BuildingPhaseSystemScript.cs" />
      <Compile Include="Assets\Scripts\Others\CameraRenderScript.cs" />
      <Compile Include="Assets\Scripts\Others\MovementWagon.cs" />
+     <Compile Include="Assets\Scripts\Others\PostWaveScript.cs" />
      <Compile Include="Assets\Scripts\Others\SelectedGridScript.cs" />
-     <Compile Include="Assets\Scripts\Others\TestScript2.cs" />
      <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystal.cs" />
      <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystalExplosion.cs" />
      <Compile Include="Assets\Scripts\Turrets\AcidTurretScript.cs" />
