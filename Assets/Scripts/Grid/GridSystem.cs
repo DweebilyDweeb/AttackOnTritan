@@ -143,7 +143,7 @@ public class GridSystem : MonoBehaviour
         }
 	}
 
-	private void SetGridsNeighbours()
+	public void SetGridsNeighbours()
 	{
 		for (int row = 0; row < numRows; ++row)
 		{
@@ -398,6 +398,50 @@ public class GridSystem : MonoBehaviour
 				tritanCrystal.transform.SetParent(grid.transform);
 				tritanCrystal.transform.localPosition = new Vector3(0, 0, 0);
 				grid.GetComponent<Grid>().tritanCrystal = tritanCrystal;
+			}
+		}
+	}
+
+	public void SaveToCSV(string _folderPath) {
+		//If there's a grid, save as 1. Else, save as 0.
+		string[] gridData = new string[numRows]; //Add numRows to account for the extra "/r" at the end.
+		for (int row = 0; row < numRows; ++row) {			
+			gridData[row] = "";
+			for (int column = 0; column < numColumns; ++column) {				
+				GridID gridID = ComputeID(row, column);
+				if (GetGrid(gridID) == null) {
+					//string.Concat(gridData[row], "0,");
+					gridData[row] += "0,";
+				} else {
+					//string.Concat(gridData[row], "1,");
+					gridData[row] += "1,";
+				}
+			}
+		}
+
+		string fileName = "New Grid Layout";
+		string filePath = _folderPath + "\\" + fileName; //The file path.
+		int numTries = 1; //Start from index 1 instead of zero because that seems to be how most files are done.
+		while (File.Exists(filePath + ".csv")) {
+			filePath = _folderPath + "\\" + fileName + " (" + numTries.ToString() + ")";
+			++numTries;
+		}
+		filePath += ".csv";
+
+		var file = File.CreateText(filePath);
+		for (int row = 0; row < numRows; ++row) {
+			//print(gridData[row]);
+			file.WriteLine(gridData[row]);
+		}
+		file.Close();
+
+		print("Saving Grid Layout to " + filePath + ". Refresh folder for it to show up. If it does not appear after 30 seconds, tell Terry. Remember to Calculate Neighbours if you haven't done so.");
+	}
+
+	public void RenderGrids(bool _render = true) {
+		for (int i = 0; i < grids.Length; ++i) {
+			if (grids[i] != null) {
+				grids[i].GetComponent<MeshRenderer>().enabled = _render;
 			}
 		}
 	}

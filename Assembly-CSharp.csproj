@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{25C07682-09DC-58EC-CC6B-883391C7E79E}</ProjectGuid>
+    <ProjectGuid>{BEB06057-295F-A2D7-1C12-2993039C7468}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -70,11 +70,13 @@
      <Compile Include="Assets\Scripts\Others\MovementWagon.cs" />
      <Compile Include="Assets\Scripts\Others\PostWaveScript.cs" />
      <Compile Include="Assets\Scripts\Others\SelectedGridScript.cs" />
+     <Compile Include="Assets\Scripts\SaveFile\GameControl.cs" />
      <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystal.cs" />
      <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystalExplosion.cs" />
      <Compile Include="Assets\Scripts\Turrets\AcidTurretScript.cs" />
      <Compile Include="Assets\Scripts\Turrets\MachineGunScript.cs" />
-     <Compile Include="Assets\Scripts\Turrets\MortarScript.cs" />
+     <Compile Include="Assets\Scripts\Turrets\Mortar\MortarProjectileScript.cs" />
+     <Compile Include="Assets\Scripts\Turrets\Mortar\MortarScript.cs" />
      <Compile Include="Assets\Scripts\Turrets\TeslaScript.cs" />
      <Compile Include="Assets\Scripts\Turrets\TestScript.cs" />
      <Compile Include="Assets\Scripts\Turrets\TurretScript.cs" />
