@@ -65,6 +65,7 @@ public class AIBehaviour : MonoBehaviour {
 				if (deadState.IsDone()) {
 					stop = true;
 					gameObject.SetActive(false);
+					//GameObject.Destroy(gameObject);
 				}
 				break;
 			default:
@@ -87,8 +88,8 @@ public class AIBehaviour : MonoBehaviour {
 		//Reset our stuff.
 		gameObject.GetComponent<AIFollowPath>().Reset();
 		gameObject.GetComponent<AIDeath>().Reset();
-		gameObject.GetComponent<GoblinAnimation>().Reset();
-		gameObject.GetComponent<GoblinAnimation>().enabled = true;
+		gameObject.GetComponent<AIAnimation>().Reset();
+		gameObject.GetComponent<AIAnimation>().enabled = true;
 	}
 
 }

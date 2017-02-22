@@ -19,7 +19,8 @@ public class AIAttackCrystal : AIAttack {
 		UpdateCountdownTimer();
 
 		//Don't bother attacking if there's nothing to attack.
-		if (tritanCrystal == null) {
+		if (tritanCrystal == null || tritanCrystal.activeSelf == false) {
+			attacking = false;
 			return;
 		}
 

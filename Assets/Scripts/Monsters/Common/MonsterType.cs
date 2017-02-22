@@ -1,0 +1,36 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public enum MONSTER_TYPE {
+	//Goblin
+	GOBLIN_ONE,
+	GOBLIN_TWO,
+	GOBLIN_THREE,
+	GOBLIN_FOUR,
+
+	//Orc
+	ORC_ONE,
+	ORC_TWO,
+	ORC_THREE,
+	ORC_FOUR,
+
+	//Shield
+	SHIELD_ONE,
+	SHIELD_TWO,
+	SHIELD_THREE,
+	SHIELD_FOUR,
+
+	//Skull
+	SKULL_ONE,
+	SKULL_TWO,
+	SKULL_THREE,
+	SKULL_FOUR,
+
+	//Ent
+	ENT_ONE,
+	ENT_TWO,
+	ENT_THREE,
+	ENT_FOUR,
+
+	NUM_MONSTER_TYPE,
+}
