@@ -65,14 +65,14 @@ public class SelectedGridScript : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            if(hit.transform.GetComponent<Grid>() != null)
+            if (hit.transform.GetComponent<Grid>() != null)
             {
                 print(hit.transform.GetComponent<Grid>().GetID());
                 selectedGrid = hit.transform.GetComponent<Grid>();
                 transform.position = theGridSystem.GetGrid(selectedGrid.GetID()).transform.position;
-                        showcaseGO = GameObject.Instantiate(selectedPrefab);
-        showcaseGO.transform.SetParent(transform);
-        showcaseGO.transform.position = selectedGrid.transform.position;
+                showcaseGO = GameObject.Instantiate(selectedPrefab);
+                showcaseGO.transform.SetParent(transform);
+                showcaseGO.transform.position = selectedGrid.transform.position;
             }
         }
         CanGameobjectBePlaced();
@@ -111,7 +111,7 @@ public class SelectedGridScript : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Return))*/
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("Default")))
         {
             if (hit.transform.GetComponent<Grid>() != null)
             {
@@ -122,7 +122,6 @@ public class SelectedGridScript : MonoBehaviour
                     ChangeTurretTranslateOnTower();
                     CanGameobjectBePlaced();
                 }
-
             }
         }
 

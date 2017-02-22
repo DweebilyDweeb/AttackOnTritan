@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Potato_Test.unity
-=======
-- path: Assets/Scenes/Terry_Test.unity
->>>>>>> caf45f554fe8b57430f0a2bfb562c235264a63bb
   isLoaded: 1
   isActive: 1
