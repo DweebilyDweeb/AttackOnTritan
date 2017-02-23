@@ -152,4 +152,19 @@ public class GridMenu {
 		}
 	}
 
+	[MenuItem("Grid/Remove Grids Inside Terrain")]
+	static void RemoveGridsInsideTerrain() {
+		if (Selection.activeObject == null) {
+			Debug.Log("No Grid Terrain Remover selected. Unable to clear grid.");
+		} else {
+			GameObject gridTerrainRemover = (GameObject)Selection.activeObject;
+			if (gridTerrainRemover.GetComponent<GridTerrainRemover>() == null) {
+				Debug.Log("Selected GameObject has no Grid Terrain Remover. Unable to clear grid.");
+			} else {
+				gridTerrainRemover.GetComponent<GridTerrainRemover>().RemoveGridsInsideTerrain();
+				EditorUtility.SetDirty(gridTerrainRemover.GetComponent<GridTerrainRemover>().gridSystem);
+			}
+		}
+	}
+
 }

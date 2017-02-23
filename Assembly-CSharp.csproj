@@ -69,12 +69,20 @@
      <Compile Include="Assets\Scripts\Monsters\Spawner\MonsterSpawnerStage.cs" />
      <Compile Include="Assets\Scripts\Monsters\Spawner\MonsterSpawnerWave.cs" />
      <Compile Include="Assets\Scripts\Others\BuildingPhaseSystemScript.cs" />
+     <Compile Include="Assets\Scripts\Others\CameraMoveScript.cs" />
      <Compile Include="Assets\Scripts\Others\CameraRenderScript.cs" />
      <Compile Include="Assets\Scripts\Others\MovementWagon.cs" />
      <Compile Include="Assets\Scripts\Others\PostWaveScript.cs" />
      <Compile Include="Assets\Scripts\Others\SelectedGridScript.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Others\TowerListToggleScript.cs" />
+     <Compile Include="Assets\Scripts\Others\TowerPrefabScript.cs" />
+     <Compile Include="Assets\Scripts\Others\TowerSelectPanelScript.cs" />
+     <Compile Include="Assets\Scripts\SaveFile\GameControl.cs" />
+=======
      <Compile Include="Assets\Scripts\SaveFile\GameControl.cs" />
      <Compile Include="Assets\Scripts\Settings\ScreenResolution.cs" />
+>>>>>>> be14877d3db6ea025b8022ce338407385f76c8a7
      <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystal.cs" />
      <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystalExplosion.cs" />
      <Compile Include="Assets\Scripts\Turrets\AcidTurretScript.cs" />

@@ -31,7 +31,6 @@ public class MortarScript : TurretScript
         velocity = Mathf.Sqrt((proximity+0.1f) * 9.8f);
         explosion = 5.0f;
         height = 0.0f;
-        towerLevel = 1;
     }
 
     // Update is called once per frame
@@ -92,8 +91,10 @@ public class MortarScript : TurretScript
                         {
                             longestDistance = (enemy.transform.position - transform.position).magnitude;
                             target = enemy.transform.gameObject;
+                            height = enemy.transform.position.y - transform.position.y;
                         }
                     }
+                    initialiseprojectile(longestDistance, height);
                     break;
                 }
         }

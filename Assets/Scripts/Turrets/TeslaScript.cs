@@ -98,6 +98,16 @@ public class TeslaScript : TurretScript {
 
     public void LevelUp()
     {
+        if (towerLevel == 1)
+        {
+            GameObject turretbase = Resources.Load("Turrets/Tesla/Telsa 1") as GameObject;
+            transform.GetChild(0).GetComponent<MeshFilter>().mesh = turretbase.GetComponent<MeshFilter>().sharedMesh;
+        }
+        else if (towerLevel == 2)
+        {
+            GameObject turretbase = Resources.Load("Turrets/Tesla/Telsa 2") as GameObject;
+            transform.GetChild(0).GetComponent<MeshFilter>().mesh = turretbase.GetComponent<MeshFilter>().sharedMesh;
+        }
         LevelUpgrades(1, 2, 0.05f, 0.5f);
     }
 }

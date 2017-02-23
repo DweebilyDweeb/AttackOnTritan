@@ -3,6 +3,28 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
+
+//public class Singleton
+//{
+//   private static Singleton instance;
+
+//   private Singleton() {}
+
+//   public static Singleton Instance
+//   {
+//      get 
+//      {
+//         if (instance == null)
+//         {
+//            instance = new Singleton();
+//         }
+//         return instance;
+//      }
+//   }
+//}
+
+
 public class Menu : MonoBehaviour {
     public Canvas MainCanvas;
     public Canvas OptionsCanvas;
@@ -81,15 +103,24 @@ public class Menu : MonoBehaviour {
         LevelSelectCanvas.enabled = false;
         PauseCanvas.enabled = true;
         PlayCanvas.enabled = false;
+
     }
     public void PlayOn()
     {
-        Time.timeScale = 1;
-        OptionsCanvas.enabled = false;
-        MainCanvas.enabled = false;
-        LevelSelectCanvas.enabled = false;
-        PauseCanvas.enabled = false;
-        PlayCanvas.enabled = true;
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "Mainmenu")
+        {
+            MainOn();
+
+        }
+        else {
+            Time.timeScale = 1;
+            OptionsCanvas.enabled = false;
+            MainCanvas.enabled = false;
+            LevelSelectCanvas.enabled = false;
+            PauseCanvas.enabled = false;
+            PlayCanvas.enabled = true;
+        }
     }
     public void ReturnOn()
     {
@@ -134,5 +165,4 @@ public class Menu : MonoBehaviour {
     {
         Application.Quit();
     }
-
 }

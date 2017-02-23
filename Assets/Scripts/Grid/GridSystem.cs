@@ -457,6 +457,7 @@ public class GridSystem : MonoBehaviour
 		}
 	}
 
+<<<<<<< HEAD
 	public void EnableGridCollider(bool _colliderOn = true)
 	{
 		for (int i = 0; i < grids.Length; ++i)
@@ -468,6 +469,8 @@ public class GridSystem : MonoBehaviour
 		}
 	}
 
+=======
+>>>>>>> 9af13aea44cf80cf9f0c2af39b23552748e11f3c
 	public int GetNumRows()
 	{
 		return numRows;
@@ -491,6 +494,7 @@ public class GridSystem : MonoBehaviour
 			{
 				continue;
 			}
+<<<<<<< HEAD
 
 			if (_terrain.SampleHeight(grids[i].transform.position) > grids[i].transform.position.y) {
 				GameObject.DestroyImmediate(grids[i]);
@@ -508,6 +512,12 @@ public class GridSystem : MonoBehaviour
 					}
 				}
 			}
+=======
+			if (_terrain.SampleHeight(grids[i].transform.position) > grids[i].transform.position.y)
+			{
+				GameObject.DestroyImmediate(grids[i]);
+            }
+>>>>>>> 9af13aea44cf80cf9f0c2af39b23552748e11f3c
         }
 
 		SetGridsNeighbours();
