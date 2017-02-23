@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/MainMenu.unity
+=======
+- path: Assets/Scenes/Terry_Test.unity
+>>>>>>> 7f62b0d4379d3c4f65ffd6c8075a7c12a3680c18
   isLoaded: 1
   isActive: 1
