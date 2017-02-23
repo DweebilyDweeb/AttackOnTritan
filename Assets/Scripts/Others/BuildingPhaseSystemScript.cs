@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BuildingPhaseSystemScript : MonoBehaviour {
 
@@ -8,7 +9,16 @@ public class BuildingPhaseSystemScript : MonoBehaviour {
 
     public int amountToBuildTowers { get; set; }
     public int numberOfBuildableWalls { get; set;}
-        
+
+    // Buttons to check
+    public Button sellTurretButton;
+    public Button sellWallButton;
+    public Button upgradeButton;
+    public Button nextWaveButton;
+
+    public Text wall;
+    public Text currency;
+
 	// Use this for initialization
     void Start()
     {
@@ -16,40 +26,86 @@ public class BuildingPhaseSystemScript : MonoBehaviour {
         numberOfBuildableWalls = 10;
         if (selectingGrid == null)
         {
-            Debug.Log("No selecting grid to debug NOOB");
             return;
         }
         if (towerPrefabs.Length <= 0)
         {
-            Debug.Log("No towers");
             return;
         }
         selectingGrid.selectedPrefab = towerPrefabs[0];
+        UpdateText();
+
+        if (sellTurretButton ||
+            sellWallButton     ||
+            upgradeButton      ||
+            nextWaveButton)
+        {
+            print("No button");
+            return;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            selectingGrid.selectedPrefab = towerPrefabs[0];
-            selectingGrid.ChangeSelected();
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            selectingGrid.selectedPrefab = towerPrefabs[1];
-            selectingGrid.ChangeSelected();
-        }
-        else if (Input.GetKeyDown(KeyCode.C))
-        {
-            selectingGrid.selectedPrefab = towerPrefabs[2];
-            selectingGrid.ChangeSelected();
-        }
-        else if(Input.GetKeyDown(KeyCode.A))
-        {
-            selectingGrid.selectedPrefab = null;
-            selectingGrid.ChangeSelected();
-        }
+
 	}
 
-    
+    public void SellTurret()
+    {
+        amountToBuildTowers += selectingGrid.DestroySelectedTurret();
+        UpdateText();
+    }
+
+    public void SellWall()
+    {
+        amountToBuildTowers += selectingGrid.DestroySelectedWall();
+        numberOfBuildableWalls += 1;
+        UpdateText();
+    }
+
+    public void UpgradeTurret()
+    {
+        amountToBuildTowers -= selectingGrid.UpgradeSelectedTurret();
+        UpdateText();
+    }
+
+    public void NextWaveButton()
+    {
+
+    }
+
+    public void SelectedTowerButton()
+    {
+        sellTurretButton.gameObject.SetActive(true);
+        sellWallButton.gameObject.SetActive(true);
+        upgradeButton.gameObject.SetActive(true);
+    }
+
+    public void SelectedWallButton()
+    {
+        sellTurretButton.gameObject.SetActive(false);
+        sellWallButton.gameObject.SetActive(true);
+        upgradeButton.gameObject.SetActive(false);
+    }
+
+    public void SelectedNothingButton()
+    {
+        sellTurretButton.gameObject.SetActive(false);
+        sellWallButton.gameObject.SetActive(false);
+        upgradeButton.gameObject.SetActive(false);
+    }
+
+    public void DisableAllButtons()
+    {
+        sellTurretButton.gameObject.SetActive(false);
+        sellWallButton.gameObject.SetActive(false);
+        upgradeButton.gameObject.SetActive(false);
+        nextWaveButton.gameObject.SetActive(false);
+    }
+
+    public void UpdateText()
+    {
+        wall.text = numberOfBuildableWalls.ToString();
+        currency.text = amountToBuildTowers.ToString();
+    }
 }
