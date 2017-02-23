@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
      <Compile Include="Assets\Scripts\MainMenu\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\MainMenu\DontDestroyMain.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\LoseScreen.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MainChecker.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MainMenuRotate.cs" />
      <Compile Include="Assets\Scripts\MainMenu\Menu.cs" />
      <Compile Include="Assets\Scripts\MainMenu\Pause.cs" />
