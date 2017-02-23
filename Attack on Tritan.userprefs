@@ -1,8 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Grid\GridSystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shaders\CelSurfaceShader.shader">
     <Files>
-      <File FileName="Assets\Scripts\Grid\GridSystem.cs" Line="434" Column="34" />
+      <File FileName="Assets\Editor\GameSettingsWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Settings\ScreenResolution.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Grid\GridSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Shaders\CelSurfaceShader.shader" Line="28" Column="3" />
+      <File FileName="Assets\Shaders\DefaultSurfaceShader.shader" Line="7" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
