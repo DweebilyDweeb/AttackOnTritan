@@ -5,7 +5,7 @@ using System.Collections;
 public class GameSettingsWindow : EditorWindow {
 
 	//Update Timer
-	float updateInterval = 3.0f;
+	float updateInterval = 1.0f;
 	float updateTimer = 0.0f;
 
 	//Monsters
@@ -57,6 +57,11 @@ public class GameSettingsWindow : EditorWindow {
 		} else {
 			Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Monster"), LayerMask.NameToLayer("Monster"), true);
 		}
+	}
+
+	void OnGUIGraphicalSettings() {
+		GUILayout.Label("Graphical Settings", EditorStyles.boldLabel);
+
 	}
 
 }

@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
     <Compile Include="Assets\Scripts\MainMenu\DontDestroy.cs" />
     <Compile Include="Assets\Scripts\MainMenu\DontDestroyMain.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\LoseScreen.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainChecker.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuRotate.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Menu.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Pause.cs" />
@@ -88,11 +90,14 @@
     <Compile Include="Assets\Scripts\Others\MovementWagon.cs" />
     <Compile Include="Assets\Scripts\Others\PostWaveScript.cs" />
     <Compile Include="Assets\Scripts\Others\SelectedGridScript.cs" />
+    <Compile Include="Assets\Scripts\SaveFile\GameControl.cs" />
+    <Compile Include="Assets\Scripts\Settings\ScreenResolution.cs" />
     <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystal.cs" />
     <Compile Include="Assets\Scripts\Tritan Crystal\TritanCrystalExplosion.cs" />
     <Compile Include="Assets\Scripts\Turrets\AcidTurretScript.cs" />
     <Compile Include="Assets\Scripts\Turrets\MachineGunScript.cs" />
-    <Compile Include="Assets\Scripts\Turrets\MortarScript.cs" />
+    <Compile Include="Assets\Scripts\Turrets\Mortar\MortarProjectileScript.cs" />
+    <Compile Include="Assets\Scripts\Turrets\Mortar\MortarScript.cs" />
     <Compile Include="Assets\Scripts\Turrets\TeslaScript.cs" />
     <Compile Include="Assets\Scripts\Turrets\TestScript.cs" />
     <Compile Include="Assets\Scripts\Turrets\TurretScript.cs" />
@@ -149,7 +154,9 @@
     <Compile Include="Assets\Unity Assets\Nebula Skyboxes\Scripts\SmoothCameraOrbit.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\CelSurfaceShader.shader" />
     <None Include="Assets\Unity Assets\ENTIGI\Readme.txt" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
@@ -181,6 +188,7 @@
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceRaytrace.cginc" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
@@ -216,6 +224,15 @@
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\Projectors\Guidelines.txt" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />

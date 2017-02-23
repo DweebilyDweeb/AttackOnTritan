@@ -1,4 +1,20 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Potato_Test.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/MainMenu.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/Levels/Level_1.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/Jacob_test.unity
+=======
+- path: Assets/Scenes/Terry_Test.unity
+>>>>>>> c61578162a277ae103dcb0dc43cc25528c2eddfa
+>>>>>>> ea86f2c8680ec3b94883ec40059586d5f8b43f00
+>>>>>>> e8b67c60340633deaef9d4aa42219aa48b074810
+>>>>>>> be14877d3db6ea025b8022ce338407385f76c8a7
   isLoaded: 1
   isActive: 1

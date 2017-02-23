@@ -87,6 +87,25 @@ public class AcidTurretScript : TurretScript {
 
     public void LevelUp()
     {
+        if (towerLevel == 1)
+        {
+            GameObject turretbase = Resources.Load("Turrets/Acid/Base 1") as GameObject;
+            transform.GetChild(0).GetComponent<MeshFilter>().mesh = turretbase.GetComponent<MeshFilter>().sharedMesh;
+            GameObject turretbarrel = Resources.Load("Turrets/Acid/Turret 1") as GameObject;
+            transform.GetChild(0).GetChild(0).GetComponent<MeshFilter>().mesh = turretbarrel.GetComponent<MeshFilter>().sharedMesh;
+            GameObject barrel = Resources.Load("Turrets/Acid/Barrel 1") as GameObject;
+            transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<MeshFilter>().mesh = turretbarrel.GetComponent<MeshFilter>().sharedMesh;
+        }
+        else if (towerLevel == 2)
+        {
+            GameObject turretbase = Resources.Load("Turrets/Acid/Base 2") as GameObject;
+            transform.GetChild(0).GetComponent<MeshFilter>().mesh = turretbase.GetComponent<MeshFilter>().sharedMesh;
+            GameObject turretbarrel = Resources.Load("Turrets/Acid/Turret 2") as GameObject;
+            transform.GetChild(0).GetChild(0).GetComponent<MeshFilter>().mesh = turretbarrel.GetComponent<MeshFilter>().sharedMesh;
+            GameObject barrel = Resources.Load("Turrets/Acid/Barrel 2") as GameObject;
+            transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<MeshFilter>().mesh = turretbarrel.GetComponent<MeshFilter>().sharedMesh;
+        }
         LevelUpgrades(1, 2, 0.05f, 0.5f);
+        towerLevel += 1;
     }
 }

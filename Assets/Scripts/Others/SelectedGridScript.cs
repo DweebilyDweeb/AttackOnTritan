@@ -217,8 +217,29 @@ public class SelectedGridScript : MonoBehaviour
             SelectedTileToDown();
             ChangeTurretTranslateOnTower();
             CanGameobjectBePlaced();
+<<<<<<< HEAD
         }*/
        // else if (Input.GetKeyDown(KeyCode.Return))
+=======
+        }
+        else if (Input.GetKeyDown(KeyCode.Return))*/
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform.GetComponent<Grid>() != null)
+            {
+                if (selectedGrid != hit.transform.GetComponent<Grid>())
+                {
+                    selectedGrid = hit.transform.GetComponent<Grid>();
+                    transform.position = theGridSystem.GetGrid(selectedGrid.GetID()).transform.position;
+                    ChangeTurretTranslateOnTower();
+                    CanGameobjectBePlaced();
+                }
+            }
+        }
+
+>>>>>>> be14877d3db6ea025b8022ce338407385f76c8a7
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (isAbleToPlacePrefab && hasResources)
