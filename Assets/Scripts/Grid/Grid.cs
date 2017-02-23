@@ -71,5 +71,5 @@ public class Grid : MonoBehaviour {
 	public GridSystem GetGridSystem() {
 		return gridSystem;
 	}
-
+    
 }
