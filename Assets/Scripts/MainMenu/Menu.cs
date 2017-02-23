@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour {
     public Canvas PlayCanvas;
     private float savedTimeScale;
     bool MainOrGame;
+
     void Awake()
     {
         if (OptionsCanvas == null && LevelSelectCanvas == null && PauseCanvas == null)
@@ -26,9 +27,11 @@ public class Menu : MonoBehaviour {
 
         if (PlayCanvas != null)
             PlayCanvas.enabled = false;
+
     }
     void Start()
     {
+
         AudioListener.pause = false;
         Time.timeScale = 1;
         MainOrGame = true;
@@ -88,7 +91,6 @@ public class Menu : MonoBehaviour {
         PauseCanvas.enabled = false;
         PlayCanvas.enabled = true;
     }
-
     public void ReturnOn()
     {
         if (MainOrGame == true)
@@ -102,7 +104,6 @@ public class Menu : MonoBehaviour {
         
         }
     }
-
 
     public void GoToShowcase()
     {
@@ -125,8 +126,8 @@ public class Menu : MonoBehaviour {
 
     public void GoToMainMenu()
     {
-        MainOn();
         SceneManager.LoadScene("MainMenu");
+        MainOn();
     }
 
     public void ExitGame()

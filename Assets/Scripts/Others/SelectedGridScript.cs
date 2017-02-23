@@ -111,7 +111,7 @@ public class SelectedGridScript : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Return))*/
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("Default")))
+        if (Physics.Raycast(ray, out hit))
         {
             if (hit.transform.GetComponent<Grid>() != null)
             {

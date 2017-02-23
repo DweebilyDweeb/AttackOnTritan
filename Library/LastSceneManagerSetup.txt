@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Potato_Test.unity
-=======
 - path: Assets/Scenes/MainMenu.unity
->>>>>>> a332f489d51dfe30276bb0793c7366c14a2a5667
   isLoaded: 1
   isActive: 1
