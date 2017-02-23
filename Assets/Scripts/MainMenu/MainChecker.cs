@@ -3,11 +3,9 @@ using System.Collections;
 
 public class MainChecker : MonoBehaviour {
 
-    public Menu check;
-
+    public GameObject check = GameObject.Find("Main Menu Camera");
     void Awake()
     {
-        check.MainOn();
     }
      
     // Use this for initialization
