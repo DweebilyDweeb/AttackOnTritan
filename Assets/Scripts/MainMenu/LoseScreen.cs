@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+
 public class LoseScreen : MonoBehaviour {
 
     [SerializeField]
     private List<GameObject> tritanCrystals;
     // Malcolm's Stuff
     Animator anim;
-    public Menu check;
+    public GameObject check;
     private bool destroyed;
     float lifetime;
     // Use this for initialization
@@ -17,6 +18,8 @@ public class LoseScreen : MonoBehaviour {
         anim = gameObject.GetComponent(typeof(Animator)) as Animator;
         destroyed = false;
         lifetime = 5;
+        check = GameObject.Find("Main Menu Camera");
+
 	}
 	
 	// Update is called once per frame
@@ -46,6 +49,6 @@ public class LoseScreen : MonoBehaviour {
     public void Reset()
     {
         destroyed = false;
-        check.GoToMainMenu();
+        check.GetComponent<Menu>().GoToMainMenu();
     }
 }
